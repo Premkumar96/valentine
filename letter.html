@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gift 1 💌</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Handwritten+Soul&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    background:#ffe5d9;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    font-family:'Handwritten Soul', cursive;
+}
+
+/* Back Button */
+.back-btn{
+    position:absolute;
+    top:20px;
+    left:20px;
+    padding:8px 15px;
+    border:none;
+    border-radius:20px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+}
+
+/* A5 Paper */
+.paper{
+    width:420px;
+    height:595px;
+    background:rgba(255,255,255,0.5);
+    backdrop-filter: blur(6px);
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.2);
+    overflow:auto;
+    position:relative;
+}
+
+/* Blinking cursor */
+.cursor{
+    display:inline-block;
+    width:2px;
+    background:black;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink{
+    0%,50%,100%{opacity:1;}
+    25%,75%{opacity:0;}
+}
+
+h2{
+    text-align:center;
+}
+
+#letterText{
+    font-size:20px;
+    line-height:1.8;
+    white-space:pre-wrap;
+}
+
+/* Heartbeat Animation */
+.love-message{
+    text-align:center;
+    margin-top:20px;
+    font-size:28px;
+    color:#ff4d6d;
+    display:none;
+    animation:fadeIn 2s ease-in-out forwards;
+}
+
+.heart{
+    display:inline-block;
+    animation:beat 1s infinite;
+}
+
+@keyframes beat{
+    0%{transform:scale(1);}
+    25%{transform:scale(1.2);}
+    40%{transform:scale(1);}
+    60%{transform:scale(1.2);}
+    100%{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<button class="back-btn" onclick="goBack()">⬅ Back to Gifts</button>
+
+<div class="paper" id="paper">
+
+<h2>To My Forever 💖✨</h2>
+
+<p id="letterText"></p><span class="cursor"></span>
+
+<div class="love-message" id="loveMsg">
+I LOVE YOU <span class="heart">❤️</span>
+</div>
+
+</div>
+
+<script>
+function goBack(){
+    window.location.href="index.html#gifts";
+}
+
+const text = `My Dearest Love,
+
+As I sit here thinking about us, I am overwhelmed with gratitude. Thank you for choosing to stand by me, for tolerating my quirks, and for being my constant rock for the past 8 incredible years. 👩‍❤️‍👨💫
+
+I look back to the very beginning when I had nothing but a dream, and I realize that the only reason I’ve grown into the person I am today is because you believed in me when I didn't even believe in myself. Your love has been my fuel, your support my foundation, and your faith my greatest strength. 🏗️📈❤️
+
+I know it hasn't always been easy. Ithu varaiku namakulla neraiya sandaigal vanthuruku—we’ve had our share of misunderstandings and tough days. ⛈️💔 But those moments only proved how unbreakable we are. But here after, let’s not fight with each other—let’s fight together as life partners for our wonderful future. 🤝🛡️🌈
+
+We have spent so many Valentine’s Days staring at screens and counting down the miles... but my heart is overflowing because this is officially our last one apart. 🥂✈️🚫
+
+Next year, the distance will finally be a memory. We won't just be celebrating as lovers across a map; we’ll be celebrating under the same roof, waking up next to each other as life partners. 🏠💍👩‍❤️‍💋‍👨
+
+" I can’t wait to start our forever home together. 💝😘🏡✨
+
+Happy Valentine’s Day, my "always and forever.`;
+
+let index = 0;
+const speed = 35;
+
+function typeLetter(){
+    if(index < text.length){
+        document.getElementById("letterText").innerHTML += text.charAt(index);
+        index++;
+
+        const paper = document.getElementById("paper");
+        paper.scrollTop = paper.scrollHeight;
+
+        setTimeout(typeLetter, speed);
+    }else{
+        document.getElementById("loveMsg").style.display = "block";
+    }
+}
+
+window.onload = typeLetter;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gift 2 📸</title>
+
+<style>
+body{
+    margin:0;
+    background:#ffe5d9;
+    text-align:center;
+    padding:30px;
+    font-family:Arial, sans-serif;
+}
+
+/* Back Button */
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    padding:8px 15px;
+    border:none;
+    border-radius:20px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+}
+
+h1{
+    margin-top:40px;
+    margin-bottom:30px;
+    font-size:28px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+    opacity:0;
+    animation:fadeIn 1s forwards;
+}
+
+/* Stagger animation */
+.gallery img:nth-child(1){ animation-delay:0.2s; }
+.gallery img:nth-child(2){ animation-delay:0.4s; }
+.gallery img:nth-child(3){ animation-delay:0.6s; }
+.gallery img:nth-child(4){ animation-delay:0.8s; }
+.gallery img:nth-child(5){ animation-delay:1s; }
+.gallery img:nth-child(6){ animation-delay:1.2s; }
+.gallery img:nth-child(7){ animation-delay:1.4s; }
+.gallery img:nth-child(8){ animation-delay:1.6s; }
+.gallery img:nth-child(9){ animation-delay:1.8s; }
+.gallery img:nth-child(10){ animation-delay:2s; }
+.gallery img:nth-child(11){ animation-delay:2.2s; }
+.gallery img:nth-child(12){ animation-delay:2.4s; }
+.gallery img:nth-child(13){ animation-delay:2.6s; }
+.gallery img:nth-child(14){ animation-delay:2.8s; }
+.gallery img:nth-child(15){ animation-delay:3s; }
+
+@keyframes fadeIn{
+    to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<button class="back-btn" onclick="goBack()">⬅ Back to Gifts</button>
+
+<h1>Most Memorable Moments 💖</h1>
+
+<div class="gallery">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+<img src="photo6.jpg">
+<img src="photo7.jpg">
+<img src="photo8.jpg">
+<img src="photo9.jpg">
+<img src="photo10.jpg">
+<img src="photo11.jpg">
+<img src="photo12.jpg">
+<img src="photo13.jpg">
+<img src="photo14.jpg">
+<img src="photo15.jpg">
+</div>
+
+<script>
+function goBack(){
+    window.location.href = "index.html#gifts";
+}
+</script>
+
+</body>
+</html>
